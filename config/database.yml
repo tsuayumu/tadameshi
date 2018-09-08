@@ -51,4 +51,5 @@ production:
   <<: *default
   database: tadameshi_production
   username: root
+  socket: /var/lib/mysql/mysql.sock
   password: '0A5y1m6u'
