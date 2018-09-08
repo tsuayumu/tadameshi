@@ -21,21 +21,25 @@ section.uk-container.tadameshi-plans
 				a[href="#{tadameshi_plan.url}" target="blank"]
 					= tadameshi_plan.title
 			dt
-				| 内容
+				| ごはん内容
 			dd
-				= tadameshi_plan.content
+				= tadameshi_plan.food
+			dt
+				| ジャンル
+			dd
+				= tadameshi_plan.genre
 			dt
 				| 開催日時
 			dd
-				= tadameshi_plan.event_at
+				| #{tadameshi_plan.start_at.try(:strftime,"%Y年 %m月 %d日")} 〜 #{tadameshi_plan.finish_at.try(:strftime,"%Y年 %m月 %d日")} #{tadameshi_plan.time}
 			dt
 				| 開催会場
 			dd
-				= tadameshi_plan.event_in
+				| #{tadameshi_plan.prefecture} #{tadameshi_plan.address}
 			dt
 				| 対象
 			dd
-				= tadameshi_plan.target
+				| #{tadameshi_plan.target_1} #{tadameshi_plan.target_2} #{tadameshi_plan.target_3}
 			a.square_btn[href="#{tadameshi_plan.url}" target="blank"]
 				| もっとみる
 

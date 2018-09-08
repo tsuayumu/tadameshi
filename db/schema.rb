@@ -14,11 +14,17 @@
 ActiveRecord::Schema.define(version: 20180902154116) do
 
   create_table "tadameshi_plans", force: :cascade do |t|
-    t.datetime "event_at",                 null: false
-    t.text     "event_in",   limit: 65535, null: false
-    t.text     "title",      limit: 65535, null: false
-    t.text     "content",    limit: 65535, null: false
-    t.text     "target",     limit: 65535, null: false
+    t.datetime "start_at"
+    t.datetime "finish_at"
+    t.text     "time",       limit: 65535
+    t.text     "prefecture", limit: 65535
+    t.text     "address",    limit: 65535
+    t.text     "title",      limit: 65535
+    t.text     "food",       limit: 65535
+    t.text     "target_1",   limit: 65535
+    t.text     "target_2",   limit: 65535
+    t.text     "target_3",   limit: 65535
+    t.text     "genre",      limit: 65535
     t.text     "url",        limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
