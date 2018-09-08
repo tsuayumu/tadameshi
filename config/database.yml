@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: tadameshi_production
-  username: tadameshi
-  password: <%= ENV['TADAMESHI_DATABASE_PASSWORD'] %>
+  username: root
+  password: '0A5y1m6u'
