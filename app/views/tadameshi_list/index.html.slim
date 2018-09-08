@@ -1,0 +1,42 @@
+section.search_section
+	form
+		h2
+			| タダ飯を見つけよう
+		p
+			| 気のおけない仲間との乾杯も、特別な日のごちそうも。<br>タダ飯であなたの思い出をより「おいしく」。
+		/div.search_form
+			input
+
+
+
+section.uk-container.tadameshi-plans
+	= paginate @tadameshi_plans
+
+	h2
+		| 近日開催のタダ飯
+
+	- @tadameshi_plans.each do |tadameshi_plan|
+		dl.tadameshi-plan
+			dd.tit
+				a[href="#{tadameshi_plan.url}" target="blank"]
+					= tadameshi_plan.title
+			dt
+				| 内容
+			dd
+				= tadameshi_plan.content
+			dt
+				| 開催日時
+			dd
+				= tadameshi_plan.event_at
+			dt
+				| 開催会場
+			dd
+				= tadameshi_plan.event_in
+			dt
+				| 対象
+			dd
+				= tadameshi_plan.target
+			a.square_btn[href="#{tadameshi_plan.url}" target="blank"]
+				| もっとみる
+
+	= paginate @tadameshi_plans
