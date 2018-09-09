@@ -5,7 +5,7 @@ require 'csv'
 csv_data = CSV.read("/tmp/#{ARGV[0]}.csv", headers: true)
 
 csv_data.each do |data|
-	next if TadameshiPlan.where(url: data["URL"])
+	next if TadameshiPlan.where(url: data["URL"]).present? || data["URL"].nil?
 	TadameshiPlan.create!(
 		start_at: data["開始日"],
 		finish_at: data["終了日"],
